@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "Build Current C++ File",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+            "${file}",
+            "-o",
+            "${fileDirname}/${fileBasenameNoExtension}.exe"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "problemMatcher": [
+            "$gcc"
+        ],
+        "detail": "Compiles the current C++ file to an executable"
+    },
+    {
+        "label": "Run Current C++ File with Input/Output Redirection",
+        "type": "shell",
+        "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "args": [
+            "<",
+            "${fileDirname}/input.txt",
+            ">",
+            "${fileDirname}/output.txt"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "problemMatcher": [],
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": true,
+            "panel": "shared",
+            "showReuseMessage": false,
+            "clear": true
+        },
+        "detail": "Runs the executable with input from input.txt and outputs to output.txt"
+    }
+]
+}
+
+
+
